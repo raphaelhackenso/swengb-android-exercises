@@ -48,6 +48,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        open_lessons.setOnClickListener{
+            val intent = Intent(this, LessonListActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     // in views_copy -> the horizontal
