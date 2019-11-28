@@ -48,4 +48,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/open_higher_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HigherOrder"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/open_lessons" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

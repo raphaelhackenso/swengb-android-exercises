@@ -53,6 +53,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        open_higher_order.setOnClickListener{
+            val intent = Intent(this, HigherOrderActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     // in views_copy -> the horizontal

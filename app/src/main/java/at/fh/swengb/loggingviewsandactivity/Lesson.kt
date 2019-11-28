@@ -1,10 +1,17 @@
 package at.fh.swengb.loggingviewsandactivity
 
 class Lesson(var id: String, var name: String, var date: String, var  topic: String, var type: LessonType,
-             lecturers: List<Lecturer>, ratings: List<LessonRating>) {
+             val lecturers: List<Lecturer>, val ratings: MutableList<LessonRating>) {
 
     fun ratingAverage():Double{
-        return 0.0
+        var average = ratings.map {it.ratingValue}.average()
+        val average2 = ratings.map{rating -> rating.ratingValue}.average()
+
+        if (average.isNaN()){
+            average = 0.0
+        }
+
+        return average
     }
 
 }

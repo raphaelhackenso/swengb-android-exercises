@@ -99,6 +99,6 @@ object LessonRepository {
     }
 
     fun rateLesson(id: String, rating: LessonRating) {
-        // TODO ADD Rating to lesson
+        lessonById(id)?.ratings?.add(rating)
     }
 }
