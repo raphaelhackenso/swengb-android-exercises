@@ -1,5 +1,8 @@
 package at.fh.swengb.loggingviewsandactivity
 
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
 class Lesson(var id: String, var name: String, var date: String, var  topic: String, var type: LessonType,
              val lecturers: List<Lecturer>, val ratings: MutableList<LessonRating>) {
 

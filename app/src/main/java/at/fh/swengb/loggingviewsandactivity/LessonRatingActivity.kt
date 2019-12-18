@@ -5,8 +5,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import at.fh.swengb.loggingviewsandactivity.LessonRepository.rateLesson
+import com.squareup.moshi.JsonClass
 import kotlinx.android.synthetic.main.activity_lesson_rating.*
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class LessonRatingActivity : AppCompatActivity() {
 

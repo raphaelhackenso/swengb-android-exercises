@@ -1,5 +1,9 @@
 package at.fh.swengb.loggingviewsandactivity
 
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 object LessonRepository {
     private val lessons: List<Lesson>
 
@@ -90,7 +94,25 @@ object LessonRepository {
         )
     }
 
-    fun lessonsList(): List<Lesson> {
+    fun lessonsList(success: (lessonList: List<Lesson>) -> Unit, error: (errorMessage: String) -> Unit) {
+        LessonApi.retrofitService.lessons().enqueue(object: Callback<List<Lesson>> {
+            override fun onFailure(call: Call<List<Lesson>>, t: Throwable) {
+                error("The call failed")
+            }
+
+            override fun onResponse(call: Call<List<Lesson>>, response: Response<List<Lesson>>) {
+                val responseBody = response.body()
+                if (response.isSuccessful && responseBody != null) {
+                    success(responseBody)
+                } else {
+                    error("Something went wrong")
+                }
+            }
+
+        })
+    }
+
+    fun lessonsList_old(): List<Lesson> {
         return lessons
     }
 

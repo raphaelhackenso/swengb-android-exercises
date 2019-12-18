@@ -26,9 +26,7 @@ class HigherOrderActivity : AppCompatActivity() {
 
 
     private fun kotlinHigherOrderWithList() {
-        val list = LessonRepository.lessonsList()
-
-
+        val list = LessonRepository.lessonsList_old()
 
 
         // Version 1 //
@@ -36,11 +34,12 @@ class HigherOrderActivity : AppCompatActivity() {
         //val test3 = list.map { it.lecturers.toString() }
         //[at.fh.swengb.loggingviewsandactivity.Lecturer@ba920b5, at.fh.swengb.loggingviewsandactivity.Lecturer@ff8434a]
 
-        val heldByBloder_1 = list.filter{ it.lecturers.toString().contains("ff8434a") }
+        //val heldByBloder_1 = list.filter{ it.lecturers.toString().contains("ff8434a") }
         //Log.e("HIGHER_ORDER",heldByBloder_1.toString())
 
 
         // Version 2 //
+
 
         fun isLecturerBloder(lecturerList: List<Lecturer>): Boolean{
             var isTrue: Boolean = false
@@ -78,6 +77,5 @@ class HigherOrderActivity : AppCompatActivity() {
         // print the result to logcat
 
     }
-
 
 }
