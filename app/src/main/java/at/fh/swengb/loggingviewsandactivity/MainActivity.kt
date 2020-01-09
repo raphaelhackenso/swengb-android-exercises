@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         share_main.setOnClickListener {
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
+                putExtra(Intent.EXTRA_TEXT, getString(R.string.shareIntent))
                 type = "text/plain"
             }
 

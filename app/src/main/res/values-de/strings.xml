@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">LoggingViewsAndActivity</string>
+    <string name="share">Teilen</string>
+    <string name="views">Sichten</string>
+    <string name="rating">Bewertungen</string>
+    <string name="lessons">Übungen</string>
+    <string name="higherorder">Higherorder</string>
+    <string name="logout">Ausloggen</string>
+    <string name="defaultText">BasisText</string>
+    <string name="shareIntent">Das ist mein Share Intent</string>
+    <string name="rateLesson">Bewerte die Übung</string>
+    <string name="access_Token">fe8700c6-57be-429e-b278-3e49399f54c6</string>
+    <string name="baseURL">https://lessons.bloder.xyz</string>
+    <string name="addedRating">Bewertung wurde hinzugefügt</string>
+
+</resources>

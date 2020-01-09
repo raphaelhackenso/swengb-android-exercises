@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.squareup.moshi.JsonClass
 import kotlinx.android.synthetic.main.item_lesson.view.*
 
@@ -48,6 +49,10 @@ class LessonViewHolder(itemView: View, val clickListener: (lesson: Lesson) -> Un
         itemView.item_lesson_avg_rating_bar.rating = lesson.ratingAverage().toFloat()
         itemView.item_lesson_avg_rating_value.text = lesson.ratingAverage().toString()
         itemView.item_lesson_rating_count.text = lesson.ratings.count().toString()
+        Glide
+            .with(itemView)
+            .load(lesson.imageUrl)
+            .into(itemView.imageView)
 
 
 

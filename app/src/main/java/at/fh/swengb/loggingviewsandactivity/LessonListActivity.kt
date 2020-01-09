@@ -97,7 +97,8 @@ class LessonListActivity : AppCompatActivity() {
                         "name": "Sanja Illes"
                     }
                 ],
-                "ratings": []
+                "ratings": [],
+                    "imageUrl" : "https://picsum.photos/600"
             }
         """
 
