@@ -7,11 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
-import at.fh.swengb.loggingviewsandactivity.LessonRepository.rateLesson
-import com.squareup.moshi.JsonClass
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_lesson_rating.*
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 class LessonRatingActivity : AppCompatActivity() {
@@ -58,7 +55,20 @@ class LessonRatingActivity : AppCompatActivity() {
 
             LessonRepository.lessonById(lessonId,
                 success = { lesson_rating_header.text =  it.name
-                            lessonName = it.name},
+                            lessonName = it.name
+                    Glide
+                        .with(imageView_rating)
+                        .load(it.imageUrl)
+                        .into(imageView_rating)
+
+                    //TODO den Feedback dingsata unten dazu
+                    val tempRatingList: List<LessonRating> = it.ratings.filter { it.feedback != "" }
+                    if( tempRatingList.first() != null){
+                        textView_feedback_output.text = tempRatingList.first().feedback
+                    }
+
+
+                },
                 error = { Log.e("API_CALL", it)})
 
 
