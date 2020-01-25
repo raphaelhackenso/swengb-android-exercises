@@ -1,11 +1,12 @@
 package at.fh.swengb.loggingviewsandactivity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_settings.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,6 +58,18 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, HigherOrderActivity::class.java)
             startActivity(intent)
         }
+
+        main_btn_settings.setOnClickListener{
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        //OUTPUT text from shared preferences
+
+        val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
+        main_settings_username_output.text =(sharedPreferences.getString("MY_KEY_FOR_USERNAME", ""))
+
 
     }
 

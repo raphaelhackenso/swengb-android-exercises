@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':wear', ':common'
 rootProject.name='LoggingViewsAndActivity'

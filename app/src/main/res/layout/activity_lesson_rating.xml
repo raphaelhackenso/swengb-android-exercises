@@ -21,14 +21,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.92" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.04" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -78,6 +78,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/lesson_rating_header" />
 
             <Button
+                android:id="@+id/btn_open_lessonNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/openNote"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.516"
+                app:layout_constraintStart_toEndOf="@+id/rate_lesson"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_feedback" />
+
+            <Button
                 android:id="@+id/rate_lesson"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,8 +97,10 @@
                 android:text="@string/rateLesson"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.071"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_feedback" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_feedback"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

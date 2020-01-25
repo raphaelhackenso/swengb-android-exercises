@@ -12,5 +12,10 @@
     <string name="access_Token">fe8700c6-57be-429e-b278-3e49399f54c6</string>
     <string name="baseURL">https://lessons.bloder.xyz</string>
     <string name="addedRating">Bewertung wurde hinzugefügt</string>
+    <string name="username">Benutzername</string>
+    <string name="darkmode">Darkmode</string>
+    <string name="save">Einstellungen speichern</string>
+    <string name="saveNote">Speichern</string>
+    <string name="openNote">LessonNote</string>
 
 </resources>

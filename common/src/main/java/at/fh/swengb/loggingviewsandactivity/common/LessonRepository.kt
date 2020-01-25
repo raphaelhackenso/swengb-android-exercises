@@ -1,5 +1,8 @@
 package at.fh.swengb.loggingviewsandactivity
 
+import android.content.Context
+import at.fh.swengb.loggingviewsandactivity.common.LessonNote
+import at.fh.swengb.loggingviewsandactivity.common.LessonNoteDatabase
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -170,6 +173,18 @@ object LessonRepository {
             }
 
         })
+    }
+
+    fun addLessonNote(context: Context, lessonNote: LessonNote) {
+        val db = LessonNoteDatabase.getDatabase(context.applicationContext)
+        db.lessonNoteDao.insert(lessonNote)
+    }
+
+    fun findLessonNoteById(context: Context, inputID: String):LessonNote? {
+        val db = LessonNoteDatabase.getDatabase(context.applicationContext)
+        return db.lessonNoteDao.findLessonNoteById(inputID)
+
+
     }
 
 

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="at.fh.swengb.loggingviewsandactivity">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HigherOrderActivity"></activity>
+        <activity android:name=".LessonLessonNoteActivity"></activity>
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".HigherOrderActivity" />
         <activity
             android:name=".LessonRatingActivity"
             android:parentActivityName=".LessonListActivity" />
@@ -26,6 +31,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

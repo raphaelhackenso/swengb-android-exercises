@@ -12,6 +12,10 @@ import kotlinx.android.synthetic.main.activity_lesson_rating.*
 
 
 class LessonRatingActivity : AppCompatActivity() {
+    companion object {
+        val EXTRA_LESSON_NOTE_ID = "NOTE_LESSON_ID_EXTRA"
+        val EXTRA_LESSON_NOTE_NAME = "NOTE_LESSON_NAME_EXTRA"
+    }
 
 
         var lessonName: String? = null
@@ -63,9 +67,7 @@ class LessonRatingActivity : AppCompatActivity() {
 
                     //TODO den Feedback dingsata unten dazu
                     val tempRatingList: List<LessonRating> = it.ratings.filter { it.feedback != "" }
-                    if( tempRatingList.first() != null){
-                        textView_feedback_output.text = tempRatingList.first().feedback
-                    }
+                    textView_feedback_output.text = tempRatingList?.first().feedback ?: ""
 
 
                 },
@@ -84,6 +86,18 @@ class LessonRatingActivity : AppCompatActivity() {
                 finish()
 
             }
+
+
+            btn_open_lessonNote.setOnClickListener{
+
+                val intent = Intent(this, LessonLessonNoteActivity ::class.java)
+                intent.putExtra(LessonRatingActivity.EXTRA_LESSON_NOTE_ID, lessonId)
+                intent.putExtra(LessonRatingActivity.EXTRA_LESSON_NOTE_NAME, lessonName)
+
+                startActivity(intent)
+
+            }
+
         }
 
 
